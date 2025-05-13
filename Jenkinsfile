@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'MAVEN_HOME' // Déclaré dans Jenkins
-        jdk 'JDK17'         // Déclaré dans Jenkins
+        maven 'Maven 3.9.9' // Déclaré dans Jenkins
+        jdk 'jdk-17'         // Déclaré dans Jenkins
     }
 
     environment {
