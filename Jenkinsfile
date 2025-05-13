@@ -26,7 +26,8 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    bat 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY'
+                 bat "mvn sonar:sonar -Dsonar.projectKey=DS2n -Dsonar.token=squ_8c84ed6357dda7fd8216a891ed9aebf596cacec8"
+
                 }
             }
         }
