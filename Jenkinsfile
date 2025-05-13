@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.9.9' // Déclaré dans Jenkins
-        jdk 'jdk-17'         // Déclaré dans Jenkins
+        maven 'MAVEN_HOME' // ✅ correspond exactement à Jenkins
+        jdk 'JDK17'         // ✅ correspond exactement à Jenkins
     }
 
     environment {
-        SONAR_PROJECT_KEY = 'DS2n' // Change si nécessaire
+        SONAR_PROJECT_KEY = 'DS2n'
     }
 
     stages {
