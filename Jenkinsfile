@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'MAVEN_HOME' // ✅ correspond exactement à Jenkins
-        jdk 'JDK17'         // ✅ correspond exactement à Jenkins
+        maven 'MAVEN_HOME' // Le nom que tu as bien configuré
+        jdk 'JDK17'         // Ton JDK déclaré
     }
 
     environment {
@@ -26,7 +26,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    bat 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY'
+                    bat 'mvn sonar:sonar -Dsonar.projectKey=%SONAR_PROJECT_KEY%'
                 }
             }
         }
