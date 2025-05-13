@@ -19,21 +19,21 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    sh 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY'
+                    bat 'mvn sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY'
                 }
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t studentdashboard:latest .'
+                bat 'docker build -t studentdashboard:latest .'
             }
         }
     }
